@@ -1,2 +1,51 @@
-body {
-  background: green; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul, ol {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.sticky-note-wrapper {
+  min-height: 100vh;
+  background: #f4f5f5; }
+  .sticky-note-wrapper .header {
+    background: #ffffff;
+    border-bottom: 1px solid #999;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; }
+    .sticky-note-wrapper .header .login-bt {
+      background: #00d3aa;
+      color: white;
+      border-radius: 20px;
+      padding: 5px; }
+  .sticky-note-wrapper .main-content {
+    width: 86%;
+    margin: 0 auto;
+    padding-top: 80px;
+    min-height: 100vh; }
