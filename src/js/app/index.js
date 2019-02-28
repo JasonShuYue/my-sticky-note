@@ -1,5 +1,15 @@
 require('scss/index.scss')
 
+console.log('heeeee')
+
+var Toast = require('mod/toast').Toast;
+
+
+
+console.log('heeeee123')
+
+Toast('请先登录', 15000)
+
 
 
 

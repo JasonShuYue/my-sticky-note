@@ -1,3 +1,5 @@
+require('scss/toast.scss')
+
 function toast(msg, time) {
     this.msg = msg;
     this.dissmissTime = time || 1000;
@@ -5,16 +7,16 @@ function toast(msg, time) {
     this.showToast();
 }
 
-Toast.prototype = {
+toast.prototype = {
     createToast: function() {
       var template = "<div class='toast'>"+ this.msg +"</div>";
 
       this.$toast = $(template);
-      $('#main-content').append(this.$toast);
+      $('body').append(this.$toast);
     },
 
     showToast: function() {
-        var seft = this;
+        var self = this;
         this.$toast.fadeIn(300, function() {
             setTimeout(function() {
                 self.$toast.fadeOut(300, function() {
