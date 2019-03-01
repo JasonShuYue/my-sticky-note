@@ -9,21 +9,77 @@
     <div class="sticky-note-wrapper">
       <header class="header clearfix">
         <span class="login-bt right">
-          <svg class="icon" aria-hidden="true">
+          <svg class="icon icon-github" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
           </svg>
           GitHub登录
         </span>
       </header>
+
       <div id='main-content' class="main-content">
-        <span class="item" style="width: 20px; display: inline-block">1</span>
-        <span class="item" style="width: 50px; display: inline-block">2</span>
-        <span class="item">3</span>
-        <span class="item">4</span>
       </div>
+
+      <!--add note 按钮-->
+      <span id="add-note"  class="add-note">
+        <svg class="icon icon-add" aria-hidden="true">
+            <use xlink:href="#icon-add"></use>
+        </svg>
+      </span>
+
+      <!--遮罩层-->
+      <div class="shade-wrapper">
+      </div>
+
+      <div class="note-form-wrapper">
+        <h1 class="form-tile">添加新标签</h1>
+        <svg class="icon icon-close" aria-hidden="true">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+        <textarea placeholder="输入内容" name="note-content" id="note-content"
+                  cols="30" rows="10" ></textarea>
+        <div class="level-wrapper">
+          <span class="level-title">重要星级:</span>
+          <div class="star-wrapper">
+              <span class="star container" data-index = 1>
+                <svg class="icon icon-star" aria-hidden="true">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </span>
+
+            <span class="star container" data-index = 2>
+                <svg class="icon icon-star" data-index = 2 aria-hidden="true">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </span>
+
+            <span class="star container" data-index = 3>
+                <svg class="icon icon-star"  aria-hidden="true">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </span>
+
+            <span class="star container" data-index = 4>
+                <svg class="icon icon-star" aria-hidden="true">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </span>
+
+            <span class="star container" data-index = 5>
+                <svg class="icon icon-star" aria-hidden="true">
+                  <use xlink:href="#icon-star"></use>
+                </svg>
+              </span>
+
+          </div>
+        </div>
+        <div class="add-bt-wrapper">
+          <span class="add-bt">添加</span>
+        </div>
+      </div>
+
     </div>
 
     <script src="js/index.js"></script>
-    <script src="//at.alicdn.com/t/font_1063682_5d19eqngec3.js"></script>
+    <script src="//at.alicdn.com/t/font_1063682_q45qp3bsu.js"></script>
   </body>
 </html>

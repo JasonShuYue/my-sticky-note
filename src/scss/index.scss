@@ -40,21 +40,26 @@ $colorPrimary: #00d3aa;
 .sticky-note-wrapper {
   min-height: 100vh;
   background: #f4f5f5;
+  overflow: hidden;
   .header {
     background: #ffffff;
-    border-bottom: 1px solid #999;
     height: 50px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    //display: flex;
-    //align-items: center;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25), 0 1px 10px rgba(0, 0, 0, 0.22);
     .login-bt {
       background: $colorPrimary;
       color: white;
       border-radius: 20px;
-      padding: 5px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      .icon-github {
+        margin-right: 5px;
+        font-size: 24px;
+      }
     }
   }
 
@@ -63,5 +68,112 @@ $colorPrimary: #00d3aa;
     margin: 0 auto;
     padding-top: 80px;
     min-height: 100vh;
+    position: relative;
+  }
+
+  .add-note {
+    cursor: pointer;
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    right: 50px;
+    bottom: 20px;
+    background: $colorPrimary;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .shade-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    &.active {
+      display: inherit;
+    }
+  }
+  .note-form-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 4px;
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: PingFangSC-Medium;
+    display: none;
+    user-select: none;
+    &.active {
+      display: flex;
+    }
+    .form-tile {
+      color: #666666;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .icon-close {
+      position: absolute;
+      right: 20px;
+      top: 25px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    #note-content {
+      background: #F5F5F5;
+      border-radius: 4px;
+      padding: 10px;
+      resize: none;
+      font-size: 20px;
+      &::placeholder {
+        color: #999999;
+        font-size: 20px;
+      }
+    }
+    .level-wrapper {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      color: #333333;
+      .star-wrapper {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        &.active {
+          .icon-star {
+            color: #fee82d;
+          }
+        }
+        .icon-star {
+          cursor: pointer;
+
+        }
+      }
+    }
+    .add-bt-wrapper {
+      display: flex;
+      justify-content: center;
+      .add-bt {
+        width: 100px;
+        color: white;
+        font-size: 20px;
+        background: $colorPrimary;
+        cursor: pointer;
+        border-radius: 20px;
+        text-align: center;
+        padding: 4px 0;
+      }
+    }
   }
 }
