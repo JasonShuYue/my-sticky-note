@@ -148,7 +148,16 @@ Note.prototype = {
 
     delete: function() {
         var self = this;
-        self.$note.remove();
+        $.post('/api/notes/delete', {id: this.id})
+            .done(function(ret) {
+                if(ret.status === 0) {
+                    self.$note.remove();
+                    eventHub.emit('waterfall');
+                } else {
+                    Toast(ret.errorMsg);
+                }
+            })
+
     }
 
 }

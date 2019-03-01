@@ -50,9 +50,9 @@ var waterFall = (function() {
         return maxSumHeight;
     }
 
-    $('#main-content').on('resize', function() {
+    $(window).on('resize', function(){
         render($ct);
-    });
+    })
 
     return {
         init: render

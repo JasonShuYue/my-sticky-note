@@ -19,6 +19,7 @@ $('#add-note').on('click', function(e) {
 
 
 
+
 eventHub.on('waterfall', function(){
     var maxHeight = waterFall.init($('#main-content'));
     // 更新main-content页面的高度
