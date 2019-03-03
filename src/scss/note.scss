@@ -30,9 +30,11 @@ $colorPrimary: #00d3aa;
     display: flex;
     align-items: center;
     user-select: none;
-    .create-time {
+    .user-name {
       flex: 1;
+      word-break: break-all;
     }
+
     .icon-close {
       cursor: pointer;
       opacity: 0;
@@ -40,6 +42,7 @@ $colorPrimary: #00d3aa;
     }
   }
   .note-content {
+    position: relative;
     width: 100%;
     flex: 1;
     border-top: 1px solid #E6E6E6;
@@ -49,6 +52,13 @@ $colorPrimary: #00d3aa;
     margin-bottom: 10px;
     &:focus {
       outline: none;
+    }
+
+  }
+  .create-time-wrapper {
+    font-size: 14px;
+    .create-time {
+      flex: 1;
     }
   }
   .note-footer {

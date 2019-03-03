@@ -16,7 +16,6 @@ router.get('/notes', function(req, res, next) {
 
 
     Note.findAll(opts).then(function(notes) {
-        // console.log(notes)
         res.send({
             status: 0,
             data: notes

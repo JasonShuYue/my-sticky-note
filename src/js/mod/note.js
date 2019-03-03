@@ -48,12 +48,21 @@ Note.prototype = {
         var template =
             '<div class="note">' +
                 '<div class="note-header">' +
-                    '<span class="create-time"></span>' +
+                    '<span class="user-name"></span>' +
+                    '' +
                     '<svg class="icon icon-close" aria-hidden="true">' +
                         '<use xlink:href="#icon-close"></use>' +
                     '</svg>' +
                 '</div>' +
-                '<div class="note-content" contenteditable="true">'+ this.opts.content +'</div>' +
+                '<div class="note-content" contenteditable="true">'+
+                    this.opts.content +
+
+                '</div>' +
+                '<div class="create-time-wrapper">' +
+                    '<span class="create-time-title">创建时间：</span>'+
+                    '<span class="create-time"></span>'+
+                '</div>' +
+
                 '<div class="note-footer">' +
                     '<div class="level-wrapper">' +
                         '<span class="level-title">重要程度:</span>' +
@@ -98,6 +107,7 @@ Note.prototype = {
 
         // 填充opts属性
         this.$note.find('.note-content').text(this.opts.content);
+        this.$note.find('.user-name').text(this.opts.username + '说：');
         this.$note.find('.create-time').text(this.opts.createdAt.split(' ')[0]);
         if(this.opts.done === 1) {
             this.$note.find('#status-bt').addClass('active');
