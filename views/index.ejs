@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>便利贴</title>
     <link rel='stylesheet' href='/css/index.css' />
   </head>
   <body>
 
     <div class="sticky-note-wrapper">
-      <header class="header clearfix">
-        <span class="login-bt right">
-          <svg class="icon icon-github" aria-hidden="true">
-            <use xlink:href="#icon-github"></use>
-          </svg>
-          GitHub登录
-        </span>
+      <header class="header">
+        <span class="header-title ">Sticky-Note</span>
+        <ul id='notes-type-wrapper' class="notes-type-wrapper">
+          <li class="notes-type" note-type="all">全部</li>
+          <li class="notes-type" note-type="completed">已完成</li>
+        </ul>
+        <% if(isLogin) {%>
+          <ul class="user-area right">
+            <li><img src="<%= user.avatar %>" alt=""></li>
+            <li><span title="<%= user.username %>"><%= user.username %></span></li>
+            <span class="line"> | </span>
+            <li class="logout"><a href="/auth/logout">注销</a></li>
+
+
+
+
+          </ul>
+        <%} else {%>
+            <a class="login-bt" href="/auth/github">
+              <svg class="icon icon-github" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+              </svg>
+              GitHub登录
+            </a>
+        <% } %>
+
+
       </header>
 
       <div id='main-content' class="main-content">
@@ -40,31 +60,31 @@
         <div class="level-wrapper">
           <span class="level-title">重要星级:</span>
           <div class="star-wrapper">
-              <span class="star container" data-index = 1>
+              <span class="star-container" data-index = 1>
                 <svg class="icon icon-star" aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
                 </svg>
               </span>
 
-            <span class="star container" data-index = 2>
+            <span class="star-container" data-index = 2>
                 <svg class="icon icon-star" data-index = 2 aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
                 </svg>
               </span>
 
-            <span class="star container" data-index = 3>
+            <span class="star-container" data-index = 3>
                 <svg class="icon icon-star"  aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
                 </svg>
               </span>
 
-            <span class="star container" data-index = 4>
+            <span class="star-container" data-index = 4>
                 <svg class="icon icon-star" aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
                 </svg>
               </span>
 
-            <span class="star container" data-index = 5>
+            <span class="star-container" data-index = 5>
                 <svg class="icon icon-star" aria-hidden="true">
                   <use xlink:href="#icon-star"></use>
                 </svg>
@@ -72,7 +92,7 @@
 
           </div>
         </div>
-        <div class="add-bt-wrapper">
+        <div id="add-bt-wrapper" class="add-bt-wrapper">
           <span class="add-bt">添加</span>
         </div>
       </div>

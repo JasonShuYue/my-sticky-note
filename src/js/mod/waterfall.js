@@ -4,8 +4,7 @@ var waterFall = (function() {
 
     function render($c) {
         $ct = $c;
-        $items = $ct.children();
-
+        $items = $ct.children(":not('.hidden')")
         var nodeWidth = $items.outerWidth(true),
             colNum = parseInt($('#main-content').width()/nodeWidth),
             colSumHeight = [];

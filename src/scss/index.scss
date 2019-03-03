@@ -42,13 +42,84 @@ $colorPrimary: #00d3aa;
   background: #f4f5f5;
   overflow: hidden;
   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
     background: #ffffff;
     height: 50px;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     right: 0;
+    font-family: PingFangSC-Regular;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25), 0 1px 10px rgba(0, 0, 0, 0.22);
+    .header-title {
+      font-size: 32px;
+      color: #00D3AA;
+      font-family: FZY4JW--GB1-0;
+    }
+    .notes-type-wrapper {
+      display: flex;
+      flex: 1;
+      font-size: 18px;
+      justify-content: center;
+      .notes-type {
+        margin: 0 50px;
+        color: #999999;
+        border-bottom: 2px solid transparent;
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 3px;
+        }
+        &.active {
+          color: $colorPrimary;
+        }
+        &:hover, &.active {
+          color: $colorPrimary;
+          &::after {
+            background: $colorPrimary;
+            animation: slideUp 0.3s;
+          }
+        }
+        @keyframes slideUp {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .user-area {
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      .line {
+        margin: 0 5px;
+      }
+      img {
+        height: 30px;
+        height: 30px;
+        border: 1px solid #999;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      .logout {
+        background: $colorPrimary;
+        padding: 7px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+      }
+    }
     .login-bt {
       background: $colorPrimary;
       color: white;
@@ -150,9 +221,13 @@ $colorPrimary: #00d3aa;
         margin-left: 10px;
         display: flex;
         align-items: center;
-        &.active {
-          .icon-star {
-            color: #fee82d;
+        .star-container {
+          &.active {
+
+            .icon-star {
+              color: #fee82d;
+            }
+
           }
         }
         .icon-star {

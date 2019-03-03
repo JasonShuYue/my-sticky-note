@@ -5,10 +5,11 @@ $colorPrimary: #00d3aa;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 8px 5px;
-  border-radius: 5px;
-  background: $colorPrimary;
-  color: white;
+  border-radius: 20px;
+  color: $colorPrimary;
+  background: white;
+  box-shadow: 0 0px 10px rgba(0,137,110, 0.3);
   font-size: 20px;
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+  padding: 14px 68px;
+  font-family: PingFangSC-Medium;
 }

@@ -25,15 +25,25 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
 
 
 // create model
-const Note = sequelize.define('user', {
+const Note = sequelize.define('note', {
     content: {
         type: Sequelize.STRING
     },
     uid: {
         type: Sequelize.STRING
     },
+    username: {
+        type: Sequelize.STRING
+    },
+    level: {
+        type: Sequelize.INTEGER
+    },
+    done: {
+        type: Sequelize.INTEGER
+    }
 
 });
+
 // // force: true will drop the table if it already exists
 // Note.sync().then(() => {
 //     // Table created
@@ -47,6 +57,16 @@ const Note = sequelize.define('user', {
 //     })
 // });
 
-Note.sync();
+Note.sync().then(function() {
+    // Note.findAll({raw: true}).then(function(notes) {
+    //     console.log(notes)
+    // }).then(function() {
+    //     Note.update({
+    //         content: '123'
+    //     }, {
+    //         where: { id: 1}
+    //     })
+    // })
+});
 
 module.exports = Note;
